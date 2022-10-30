@@ -1,0 +1,19 @@
+Package: MyFinalProject
+Title: Spotify Database Manipulator
+Version: 0.0.0.9000
+Authors@R: 
+    person("Aaron", "Uy", , "alu10@georgetown.edu", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package contains functions that allow manipulation of an included Spotify dataset to yield user-input dependent outputs. 
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Depends: 
+    R (>= 2.10)
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

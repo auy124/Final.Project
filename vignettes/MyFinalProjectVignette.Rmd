@@ -1,0 +1,84 @@
+---
+title: "MyFinalProjectVignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MyFinalProjectVignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## ProjectFinal
+
+This package "ProjectFinal" contains a variety of functions that serve to manipulate a given Spotify dataset from Kaggle, provided within this package, or similar datasets.
+
+Included in this package are the following functions:
+
+-   **Search**
+-   **random_songs**
+-   **genres**
+
+and the following dataset:
+
+- **dataset**
+
+### **Search**
+
+The "Search" function allows the user to search the data.frame for the qualities of a given song.
+
+Inputs: 
+
+- file_name: the name of the data.frame 
+- song_column: the column data of the song names of the given data.frame. Ex. dataset$track_name 
+- song_name_in_quotations: Song name. Ex. "Comedy"
+
+The following is an example: 
+
+```{r setup}
+library(MyFinalProject)
+search(dataset, dataset$track_name, "Comedy")
+```
+
+Note: The user must specify the column name of the data.frame and the song name, case sensitive. If the song is not found within the dataset, the function will output: "Song not found, please try another song". 
+
+### **random_songs** 
+
+The "random" function provides the user with a list of random songs given user genre preference.
+
+Inputs:
+
+-   file_name: The name of the data.frame 
+-   how_many: how many songs the user would like output Ex. 15 
+-   genre_in_quotations: what genre from the given data.frame would the user like to output songs from Ex. "acoustic"
+
+The following is an example: 
+
+```{r setup2}
+random_songs(dataset, 12, "acoustic")
+```
+
+Note: The user is able to specify the number of outputted songs and the genre of music from which these songs are pooled from. If this number exceeds the unique songs within the pool of songs, the function outputs all the songs from within this pool.
+
+### **genres**
+
+The "random" function provides the user with the crossed-list genres for a given song.
+
+Inputs: 
+
+  -   file_name: The name of the data.frame 
+  -   song_column: the column data of the song names of the given data.frame. Ex.dataset$track_name 
+  -   song_name_in_quotations: Song name. Ex. "Comedy"
+  
+The following is an example:
+
+```{r setup3}
+genres(dataset, dataset$track_name, "Comedy")
+```
+
+Note: The given dataset contains songs cross-listed under multiple genres and this function outputs the genres that a given song is listed under. The user must specify the the column name of the data.frame and the song name, case sensitive.
